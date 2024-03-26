@@ -1,0 +1,34 @@
+% UM color theme
+\mode<presentation>
+
+% definitions
+\definecolor{umlightmaize}{RGB}{253,213,65}
+\definecolor{umdarkmaize}{RGB}{255,203,11}
+\definecolor{umlightblue}{RGB}{97,137,183}
+\definecolor{umdarkblue}{RGB}{13,37,78}
+\definecolor{umlightgray}{RGB}{182,182,182}
+\definecolor{umdarkgray}{RGB}{51,51,51}
+\definecolor{umpoppy}{RGB}{225,64,0}
+
+% default font color
+\setbeamercolor{normal text}{fg=umdarkgray,bg=white}
+
+% set the title color
+%\setbeamercolor{title}{fg=umdarkblue}
+\setbeamercolor{title}{fg=umdarkgray}
+
+% set colors for block elements
+% normal
+% \setbeamercolor{block title}{fg=umdarkblue,bg=umlightblue!80}
+\setbeamercolor{block title}{fg=white,bg=umlightblue}
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=umlightblue!20}
+% alerted
+\setbeamercolor{block title alerted}{bg=umlightmaize,fg=umdarkblue}
+\setbeamercolor{block body alerted}{bg=umlightmaize}
+% example
+\setbeamercolor{block title example}{bg=umlightblue,fg=umdarkgray}
+\setbeamercolor{block body example}{bg=umlightblue!20}
+
+\setbeamercolor{top bar}{fg=umlightmaize}
+
+\mode<all>

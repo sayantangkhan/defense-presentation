@@ -1,0 +1,68 @@
+\mode<presentation>
+
+%\DeclareOptionBeamer{watermark}{\def\beamer@umsimple@watermark{#1}}
+%\ExecuteOptionsBeamer{watermark=} % Default value is empty
+%\DeclareOptionBeamer{watermarkopacity}{\def\beamer@umsimple@watermarkopacity{#1}}
+%\ExecuteOptionsBeamer{watermarkopacity=1.0} % Default value is empty
+
+\DeclareOptionBeamer{topline}[true]{\def\beamer@UM@topline{#1}}
+\ExecuteOptionsBeamer{topline=false} % Default
+
+\ProcessOptionsBeamer
+
+\RequirePackage{tikz}
+
+\defbeamertemplate*{sidebar right}{UM theme}
+{
+% header styline
+% top line
+\def\beamer@UM@truetext{true}
+\ifx\beamer@UM@topline\beamer@UM@truetext%
+  \begin{tikzpicture}[overlay]%
+  \usebeamercolor[fg]{top bar}% alternately, topbarlike would be a good beamercolor
+  \draw[fill] (-\paperwidth,0) rectangle (0,-3pt);%
+  \end{tikzpicture}%
+\fi
+}
+
+% footer styling
+\setbeamercolor{section in footer}{fg=umdarkblue,bg=umdarkmaize}
+\setbeamercolor{subsection in footer}{fg=umdarkblue,bg=umdarkmaize}
+\setbeamercolor{pagenumber in footer}{fg=umdarkblue,bg=umdarkmaize}
+
+\defbeamertemplate*{footline}{UM theme}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.25ex,dp=1ex,center]{section in footer}%
+    %\insertshorttitle
+    \insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.34\paperwidth,ht=2.25ex,dp=1ex,center]{subsection in footer}%
+    \insertsection
+  \end{beamercolorbox}%figs/ 
+  \begin{beamercolorbox}[wd=.34\paperwidth,ht=2.25ex,dp=1ex,center]{pagenumber in footer}%
+   \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+\setbeamersize{text margin left=1em,text margin right=1em}
+
+%\if \beamer@umsimple@watermark\@empty
+%% This is kind of a kludge since if I put anything in here, I automatically get errors
+%% Somehow LaTeX wants to read the \else part!
+%\else%
+%\RequirePackage{tikz}
+%\setbeamertemplate{background canvas}{%
+%\begin{tikzpicture}[remember picture, overlay]
+%\node[opacity=\beamer@umsimple@watermarkopacity,inner sep=0pt] at (4.5in,-3.5in) {%
+%  \includegraphics[width=0.1\paperwidth]{\beamer@umsimple@watermark}
+%};%
+%\end{tikzpicture}
+%}
+%\fi
+
+
+\mode<all>
+\endinput

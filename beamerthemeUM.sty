@@ -1,0 +1,40 @@
+\mode<presentation>
+
+\DeclareOptionBeamer{watermark}{\PassOptionsToPackage{watermark=#1}{beamerouterthemeUM}}
+\DeclareOptionBeamer{topline}[true]{\PassOptionsToPackage{topline=#1}{beamerouterthemeUM}}
+\DeclareOptionBeamer{blocktitle}[true]{\def\beamer@blocktitle{#1}}
+\ExecuteOptionsBeamer{blocktitle=true}
+
+\ProcessOptionsBeamer
+
+\usecolortheme{UM}
+\useoutertheme{UM}
+
+% frame title styling
+\setbeamertemplate{frametitle}{\vspace{0.4cm} \color{umdarkblue} \bfseries \insertframetitle}
+
+\usesubitemizeitemtemplate{%
+    \tiny\raise1.5pt\hbox{\color{beamerstructure}$\blacktriangleright$}%
+}
+\usesubsubitemizeitemtemplate{%
+    \tiny\raise1.5pt\hbox{\color{beamerstructure}$\bigstar$}%
+}
+
+% itemized style
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[default]
+
+\setbeamersize{text margin left=1em,text margin right=1em}
+% The following line doesn't seem to work any more
+%\setbeamersize{frametitle=\huge}
+
+\def\beamer@UM@truetext{true}
+\ifx\beamer@blocktitle\beamer@UM@truetext
+\setbeamercolor{title}{use=structure,fg=white,bg=umlightblue}
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true,shadow=true]
+\fi
+
+
+\mode<all>
+
+\newcommand{\umemph}[1]{{\color{umpoppy} #1}}
