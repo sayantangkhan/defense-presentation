@@ -45,7 +45,7 @@
 \newcommand{\mcg}{\text{MCG}}
 \newcommand{\os}{\mathcal{S}}
 \newcommand{\no}{\mathcal{N}}
-\newcommand{\teich}{\mathrm{Teich}}
+\newcommand{\teich}{\mathcal{T}}
 \newcommand{\mg}{\mathcal{M}}
 \newcommand{\pslr}{\text{PSL}(2, \mathbb{R})}
 \newcommand{\scc}{\mathscr{S}}
@@ -251,6 +251,115 @@
     The limit set of the $\mcg(\no_g)$ action on $\teich(\no_g)$ is $\pmf^+(\no_g)$.
   \end{theorem}
 }
+\end{frame}
+
+\section{Statistical convex-cocompactness}
+
+\begin{frame}
+  \frametitle{What do we need for ``good'' Patterson-Sullivan measures?}
+  \begin{itemize}
+  \item<2-> Classically, Patterson-Sullivan measures were constructed for hyperbolic spaces.
+  \item<3-> Then variable negative curvature, Gromov hyperbolic, $\mathrm{CAT}(k)$ for $k \leq 0$, etc.
+  \item<4-> Teichmüller spaces are not hyperbolic on the nose, but somewhat hyperbolic.
+  \end{itemize}
+ \begin{columns}
+   \uncover<5-> {
+\begin{column}{0.5\textwidth}
+  \begin{center}
+     \textbf{Thick part}
+  \end{center}
+  \begin{itemize}
+  \item<6-> Region where all curves on underlying surface are longer than $\varepsilon$.
+  \item<7-> Geometry of thick region mostly governed by curve complex of surface, which is hyperbolic.
+  \end{itemize}
+  \vspace{4.4cm}
+\end{column}
+   }
+
+\uncover<8-> {
+\begin{column}{0.5\textwidth}  %%<--- here
+    \begin{center}
+      \textbf{Thin part}
+     \end{center}
+     \begin{itemize}
+     \item<9-> Region where some curve $\gamma$ on underlying surface is shorter than $\varepsilon$.
+     \item<10-> Metric in this region is $L^{\infty}$ product of metrics on subsurfaces (Minsky's product region theorem).
+     \end{itemize}
+     \uncover<11->{
+\includegraphics[scale=0.1]{minsky.png}
+     }
+\end{column}
+}
+
+\end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Statistical convex-cocompactness}
+  \begin{itemize}
+  \item<2-> Suffices to show geodesics enter the thin part with exponentially low probabilities. This is the notion of \emph{statistical convex-cocompactness}, and Coulon and Yang showed that this is enough for ``good'' Patterson-Sullivan theory.
+  \item<3-> For Teichmüller spaces of orientable surfaces, Eskin and Mirzakhani proved statistical convex-cocompactness.
+  \item<4-> They did this by studying a random walk on Teichmüller space instead, and show good recurrence properties for the random walk.
+  \item<5-> There are two obstructions in adapting their random walk based techniques to the non-orientable setting.
+  \item<6-> Obstruction $1$: Thin region where some \emph{one-sided curve} gets short does not have good recurrence properties for the random walk.
+    \uncover<7-> {
+      \begin{theorem}[K.]
+        The map $(\mathcal{T}_{\varepsilon_t}^{-}(\no_g), \text{induced path metric}) \to (\mathcal{T}_{\varepsilon_t}^{-}(\no_g), \text{Teichmüller metric})$ is $(1 + \varepsilon_d)$ bi-Lipschitz.
+      \end{theorem}
+    }
+  \item<8-> Obstruction 2: It's not obvious that the volume growth entropy of $\mathcal{T}_{\varepsilon_t}^{-}(\no_g)$ is equal to the lattice point growth entropy for the $\mcg(\no_g)$ action.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{How to understand random walks on Teichmüller space}
+  \begin{itemize}
+  \item<2-> Random walk is with respect to a net in $\teich(\no_g)$: the Teichmüller metric controls the law of the random walk.
+  \item<3-> In the thin part, we understand the Teichmüller metric really well, thanks to Minsky.
+    \uncover<4-> {
+      \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.1]{minsky.png}
+      \end{figure}
+    }
+  \item<5-> Since the ball is approximately an $L^{\infty}$ product, picking a point uniformly at random is equivalent to picking a points \emph{independently} on the two coordinates.
+  \item<6-> We can show strong recurrence for random walks on a horoball in $\mathbb{H}$.
+  \item<7-> For one-sided thin regions, we get a symmetric random walk on $\mathbb{Z}$, which is not strongly recurrent.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Volume entropy vs lattice point entropy}
+  \begin{itemize}
+  \item<2-> The random walk argument gives us an estimate in terms of the volume growth entropy. Statistical convex cocompactness requires an estimate in terms of lattice point entropy.
+  \item<3-> Hope: the entropies might be equal since $\teich_{\varepsilon_t}^{-}(\no_g)/\mcg(\no_g)$ has finite volume.
+  \item<4-> Technical tool to prove a statement like this was invented recently by Dowdall and Masur: \emph{complexity length}.
+  \item<5-> Key idea is based off of Minsky's theorem again: we need to understand how volume grows in product region, and therefore, a horoball.
+    \uncover<6-> {
+      \begin{align*}
+        \text{Volume growth for ball of radius $R$ in $\mathbb{H}$} \sim \exp(2R)
+      \end{align*}
+    }
+    \uncover<7-> {
+      \begin{align*}
+        \text{Volume growth for ball of radius $R$ intersected with a horoball}  \sim \exp(R)
+      \end{align*}
+    }
+  \item<8-> Gap in exponential growth rates tells us that the thin part does not contribute a significant fraction of total volume.
+    \uncover<9->{
+      \begin{theorem}[K.]
+        For all surfaces $S$, and any $\varepsilon_t > 0$, we have the following equality of entropies.
+        \begin{align*}
+          h_{V}(\teich_{\varepsilon_t}^-(S)) = h_{LP}(\teich_{\varepsilon_t}^-(S))
+        \end{align*}
+      \end{theorem}
+    }
+    \uncover<10->{
+      \begin{theorem}[K.]
+        The action of $\mcg(\no_g)$ on $\teich_{\varepsilon_t}^-(\no_g)$ is statistically convex-cocompact.
+      \end{theorem}
+    }
+  \end{itemize}
 \end{frame}
 
 \end{document}
