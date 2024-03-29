@@ -7,10 +7,10 @@ clean:
 	rm -rf ./web/
 
 web-presentation:
-	mkdir ./web/
+	mkdir -p ./web/
 	cp ./presentation.pdf ./web/
 
 web-handout:
-	mkdir ./web/
+	mkdir -p ./web/
 	cp ./handout.pdf ./web/
 
