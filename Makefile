@@ -6,8 +6,11 @@ clean:
 	find ./build/ -type f -not -name '*.pdf' -exec rm {} +
 	rm -rf ./web/
 
-web:
+web-presentation:
 	mkdir ./web/
 	cp ./build/presentation.pdf ./web/
+
+web-handout:
+	mkdir ./web/
 	cp ./build/handout.pdf ./web/
-	echo "Link to <a href=presentation.pdf>presentation</a> and <a href=handout.pdf>handout</a>." > ./web/index.html
+
