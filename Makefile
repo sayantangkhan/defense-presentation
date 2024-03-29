@@ -8,9 +8,9 @@ clean:
 
 web-presentation:
 	mkdir ./web/
-	cp ./build/presentation.pdf ./web/
+	cp ./presentation.pdf ./web/
 
 web-handout:
 	mkdir ./web/
-	cp ./build/handout.pdf ./web/
+	cp ./handout.pdf ./web/
 
