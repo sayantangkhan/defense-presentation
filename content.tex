@@ -1,24 +1,3 @@
-\documentclass[8pt]{beamer}
-
-\usetheme{UM}
-\usecolortheme{UM}
-% \setbeamertemplate{page number in head/foot}[totalframenumber]
-
-\usepackage{datetime}
-\usepackage{amsmath, amsthm, amsfonts, amssymb}
-% \usepackage{mathtools}
-\usepackage{float}
-\usepackage{enumerate}
-\usepackage{graphicx}
-\usepackage{overpic}
-\usepackage{tikz}
-\usepackage{tikz-cd}
-
-% \newtheorem{theorem}{Theorem}[section]
-% \newtheorem*{untheorem}{Theorem}
-
-% \newtheorem{lemma}[theorem]{Lemma}
-
 % \newtheorem{claim}[theorem]{Claim}
 \newtheorem{proposition}[theorem]{Proposition}
 % \newtheorem{corollary}[theorem]{Corollary}
@@ -204,8 +183,8 @@
     \begin{figure}[h]
       \begin{overprint}
       \centering
-      \onslide<4>\includegraphics[scale=0.2]{ietwf.png}
-      \onslide<5->\includegraphics[scale=0.2]{ietwf2.png}
+      \onslide<4|handout:1>\includegraphics[scale=0.2]{ietwf.png}
+      \onslide<5-|handout:2>\includegraphics[scale=0.2]{ietwf2.png}
       \end{overprint}
     \end{figure}
     \uncover<6->{
@@ -363,3 +342,7 @@
 \end{frame}
 
 \end{document}
+
+%%% Local Variables:
+%%% TeX-master: "presentation"
+%%% End:
