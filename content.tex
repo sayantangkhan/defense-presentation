@@ -131,7 +131,7 @@
   \end{align*}
   \begin{itemize}
   \item<2-> $\mg(\os_g)$ is $6g-6$ dimensional.
-  \item<3-> $\mg(\os_g)$ is a metric space: $x$ and $y$ in $\mg(\no_g)$ are close if the derivative of some map $x \to y$ maps circles to ``almost'' circles.
+  \item<3-> $\mg(\os_g)$ is a metric space: $x$ and $y$ in $\mg(\os_g)$ are close if the derivative of some map $x \to y$ maps circles to ``almost'' circles.
   \item<4-> Unit (co)tangent bundle of $\mg(\os_g)$ is non-compact, but finite volume, and admits a geodesic flow (and an $SL(2, \mathbb{R})$ action) with good dynamical properties.
   \end{itemize}
   \uncover<5->{
@@ -339,6 +339,42 @@
       \end{theorem}
     }
   \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{On complexity length}
+  \uncover<2-> {
+    \begin{goal}
+      Want to count net points (which stay in thin part) distance $R$ away from base point $p$, with good upper bounds.
+    \end{goal}
+  }
+  \begin{itemize}
+  \item<3-> Results of Athreya, Bufetov, Eskin, and Mirzakhani can be applied, but the upper bound in this setting is not tight enough.
+  \item<4-> Reduction: Assume geodesic joining $p$ to a net point $n$ stays entirely within a product region where $\gamma$ is short.
+    \uncover<5->{
+      \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.08]{minsky.png}
+      \end{figure}
+    }
+  \item<6-> Can count independently along both axes: count along $\teich(S \setminus \gamma)$ grows like $\exp((6g-8)R)$, and count along $\teich(\gamma)$ grows like $\exp(R)$.
+  \item<7-> Complexity length is based on this idea, but accounts for the fact that the geodesic joining $p$ and $n$ could travel through several product regions while staying in the thin part.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{What next?}
+  \begin{itemize}
+  \item<2-> Figure out what is wrong with the growth of simple closed curves on non-orientable surfaces.
+  \item<3-> Show that the action of $\mcg(\no_g)$ on $\teich(\no_g)$ is statistically convex cocompact.
+  \item<4-> Figure out computational (or other) methods to actually estimate the entropies.
+  \end{itemize}
+  \uncover<5->{
+    \begin{figure}[h]
+      \centering
+      \includegraphics[scale=0.02]{boundary_cropped.png}
+    \end{figure}
+  }
 \end{frame}
 
 \end{document}
